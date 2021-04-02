@@ -3,14 +3,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <item android:id="@+id/homeNavigation"
         android:icon="@drawable/iconehome"
-        android:title="Recherche"></item>
-    <item android:icon="@drawable/iconehome"
+        android:title="@string/pageacceuil"></item>
+    <item android:icon="@drawable/staricone"
         android:id="@+id/favoriNavigation"
-        android:title="Je"></item>
-    <item android:icon="@drawable/iconehome"
+        android:title="@string/favorinav"></item>
+    <item android:icon="@drawable/smileyicon"
         android:id="@+id/humeurNavigation"
-        android:title="Je"></item>
-    <item android:icon="@drawable/iconehome"
+        android:title="@string/humeur"></item>
+    <item android:icon="@drawable/prorfileicon"
         android:id="@+id/profilNavigation"
-        android:title="MIghty"></item>
+        android:title="@string/profil"></item>
 </menu>

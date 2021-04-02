@@ -43,35 +43,32 @@ public class SuggestionFilm extends AppCompatActivity {
         for (Film temp: tabfilm
         ) {
             map = new HashMap<>();
-            map.put("titre", temp.getTitre());
-            //on insère un élément description que l'on récupérera dans le textView description créé dans le fichier row.xml
-            map.put("note", ""+temp.getNote());
-            //on insère la référence à l'image (converti en String car normalement c'est un int) que l'on récupérera dans l'imageView créé dans le fichier row.xml
+            map.put("titre", temp.getTitre()+"  "+temp.getNote()+"/5");
 
+            //on insère un élément description que l'on récupérera dans le textView description créé dans le fichier row.xml
+
+            //on insère la référence à l'image (converti en String car normalement c'est un int) que l'on récupérera dans l'imageView créé dans le fichier row.xml
+            map.put("duree", temp.getDuree());
             listItem.add(map);
 
         }
-        /*
+
         //Création d'un SimpleAdapter qui se chargera de mettre les items présents dans notre list (listItem) dans la vue row(chque cours)
-        SimpleAdapter mSchedule = new SimpleAdapter (this.getBaseContext(), listItem, R.layout.rangeseance,
-                new String[] { "titre", "note"}, new int[] { R.id.titre, R.id.description});
+        SimpleAdapter mSchedule = new SimpleAdapter (this.getBaseContext(), listItem, R.layout.rangefilmsuggestion,
+                new String[] { "titre", "duree"}, new int[] { R.id.titrenote, R.id.dureetextbox});
 
 
         //On attribue à notre listView l'adapter que l'on vient de créer
         maListView.setAdapter(mSchedule);
 
         //Enfin on met un écouteur d'évènement sur notre listView
-        maListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            @SuppressWarnings("unchecked")
-            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-                //on récupère la HashMap contenant les infos de notre item (titre, description, img)
-                HashMap<String, String> map = (HashMap<String, String>) maListView.getItemAtPosition(position);
+        maListView.setOnItemClickListener((a, v, position, id) -> {
+            //on récupère la HashMap contenant les infos de notre item (titre, description, img)
+            HashMap<String, String> map1 = (HashMap<String, String>) maListView.getItemAtPosition(position);
 
 
 
-            }
-        });*/
+        });
         //bar de navigation
         bottomNavigationMenu.setOnNavigationItemSelectedListener(item -> {
             if(item.getItemId()==R.id.homeNavigation){

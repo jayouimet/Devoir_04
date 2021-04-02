@@ -6,7 +6,13 @@ public class Film {
     private String titre;
     private float note;
     private boolean favori;
+    private String duree;
     private ArrayList<String> humeurlist;
+
+    public String getDuree() {
+        return duree;
+    }
+
     public Film(String titre){
         humeurlist=new ArrayList<>();
         for(int i=0;i<3;i++){
@@ -15,6 +21,7 @@ public class Film {
         }
         this.titre=titre;
         note=4;
+        duree="2h09";
         favori=false;
     }
 

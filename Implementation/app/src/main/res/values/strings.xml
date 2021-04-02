@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Devoir4Film</string>
+    <string name="suggestion">SUGGESTIONS</string>
+    <string name="pageacceuil">Page d\'accueil</string>
+    <string name="recherchehumeur">Rechercher par humeur</string>
+    <string name="humeur">Vos humeurs</string>
+    <string name="profil">Votre profil</string>
+    <string name="favorinav">Vos favoris</string>
 </resources>
