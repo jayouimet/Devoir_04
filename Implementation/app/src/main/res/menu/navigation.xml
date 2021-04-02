@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/homeNavigation"
+        android:icon="@drawable/iconehome"
+        android:title="Recherche"></item>
+    <item android:icon="@drawable/iconehome"
+        android:id="@+id/favoriNavigation"
+        android:title="Je"></item>
+    <item android:icon="@drawable/iconehome"
+        android:id="@+id/humeurNavigation"
+        android:title="Je"></item>
+    <item android:icon="@drawable/iconehome"
+        android:id="@+id/profilNavigation"
+        android:title="MIghty"></item>
+</menu>
