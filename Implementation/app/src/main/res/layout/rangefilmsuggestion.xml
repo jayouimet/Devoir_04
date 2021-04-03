@@ -48,11 +48,12 @@
         <ImageView
 
             android:id="@+id/imageetoile"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/staricone"
+            android:layout_width="49dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="16dp"
+            android:src="@mipmap/transpartentstar_foreground"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.866"
+            app:layout_constraintHorizontal_bias="0.807"
             app:layout_constraintStart_toEndOf="@+id/titrenote"
             app:layout_constraintTop_toTopOf="parent" />
 

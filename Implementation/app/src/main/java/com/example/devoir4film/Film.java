@@ -44,4 +44,20 @@ public class Film {
     public ArrayList<String> getHumeurlist() {
         return humeurlist;
     }
+
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    public void setNote(float note) {
+        this.note = note;
+    }
+
+    public void setFavori(boolean favori) {
+        this.favori = favori;
+    }
+
+    public void setDuree(String duree) {
+        this.duree = duree;
+    }
 }

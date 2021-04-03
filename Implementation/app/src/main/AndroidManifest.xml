@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Devoir4Film">
+        <activity android:name=".favoris"></activity>
         <activity android:name=".SuggestionFilm">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

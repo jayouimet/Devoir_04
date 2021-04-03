@@ -2,25 +2,20 @@ package com.example.devoir4film;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
-import com.google.android.material.bottomnavigation.BottomNavigationMenu;
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class SuggestionFilm extends AppCompatActivity {
+public class favoris extends AppCompatActivity {
     BottomNavigationView bottomNavigationMenu;
     ArrayList<Film> tabfilm;
     ListView maListView;
@@ -30,15 +25,15 @@ public class SuggestionFilm extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_suggestion);
-        maListView = findViewById(R.id.listsuggestion);
-        bottomNavigationMenu = findViewById(R.id.barnavsuggestion);
-        inputRechercher = findViewById(R.id.barrerechercheselonhumeur);
-        favorie=findViewById(R.id.imageetoile);
+        setContentView(R.layout.activity_favoris);
+        maListView = findViewById(R.id.listfavori);
+        bottomNavigationMenu = findViewById(R.id.barnavfav);
+        inputRechercher = findViewById(R.id.barrerechercheselonhumeurfavoris);
+
         tabfilm = new ArrayList<>();
         for (int i = 1; i < 26; i++) {
             Film temp = new Film("Film #" + i);
-            if(i%3==0){
+            if (i % 3 == 0) {
                 temp.setFavori(true);
             }
             tabfilm.add(temp);
@@ -69,8 +64,6 @@ public class SuggestionFilm extends AppCompatActivity {
 
                 return true;
             } else if (item.getItemId() == R.id.favoriNavigation) {
-                Intent intent=new Intent(this,favoris.class);
-                startActivity(intent);
 
                 return true;
             } else if (item.getItemId() == R.id.humeurNavigation) {
@@ -96,24 +89,24 @@ public class SuggestionFilm extends AppCompatActivity {
         //On refait la manip plusieurs fois avec des données différentes pour former les items de notre ListView
         for (Film temp : tabfilm
         ) {
-            for (int i = 0; i < temp.getHumeurlist().size(); i++) {
+            if (temp.isFavori()) {
+                for (int i = 0; i < temp.getHumeurlist().size(); i++) {
 
-                if (longueur <= temp.getHumeurlist().get(i).length() && stringDepart.equalsIgnoreCase(temp.getHumeurlist().get(i).substring(0, longueur))) {
-                    map = new HashMap<>();
-                    map.put("titre", temp.getTitre() + "  " + temp.getNote() + "/5");
+                    if (longueur <= temp.getHumeurlist().get(i).length() && stringDepart.equalsIgnoreCase(temp.getHumeurlist().get(i).substring(0, longueur))) {
+                        map = new HashMap<>();
+                        map.put("titre", temp.getTitre() + "  " + temp.getNote() + "/5");
 
-                    //on insère un élément description que l'on récupérera dans le textView description créé dans le fichier row.xml
+                        //on insère un élément description que l'on récupérera dans le textView description créé dans le fichier row.xml
 
-                    //on insère la référence à l'image (converti en String car normalement c'est un int) que l'on récupérera dans l'imageView créé dans le fichier row.xml
-                    map.put("duree", temp.getDuree());
-                    if(temp.isFavori()){
-                        map.put("img",String.valueOf(R.mipmap.yellowstar_foreground));
+                        //on insère la référence à l'image (converti en String car normalement c'est un int) que l'on récupérera dans l'imageView créé dans le fichier row.xml
+                        map.put("duree", temp.getDuree());
+
+                        map.put("img", String.valueOf(R.mipmap.yellowstar_foreground));
+
+
+                        listItem.add(map);
+                        break;
                     }
-                    else{
-                        map.put("img",String.valueOf(R.mipmap.transpartentstar_foreground));
-                    }
-                    listItem.add(map);
-                    break;
                 }
             }
 
@@ -121,7 +114,7 @@ public class SuggestionFilm extends AppCompatActivity {
 
         //Création d'un SimpleAdapter qui se chargera de mettre les items présents dans notre list (listItem) dans la vue row(chque cours)
         SimpleAdapter mSchedule = new SimpleAdapter(this.getBaseContext(), listItem, R.layout.rangefilmsuggestion,
-                new String[]{"titre", "duree","img"}, new int[]{R.id.titrenote, R.id.dureetextbox,R.id.imageetoile});
+                new String[]{"titre", "duree", "img"}, new int[]{R.id.titrenote, R.id.dureetextbox, R.id.imageetoile});
 
 
         //On attribue à notre listView l'adapter que l'on vient de créer
