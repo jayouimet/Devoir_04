@@ -26,11 +26,13 @@ public class SuggestionFilm extends AppCompatActivity {
     ListView maListView;
     EditText inputRechercher;
     ImageView favorie;
+    Utilisateur actuel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suggestion);
+        actuel=new Utilisateur();
         maListView = findViewById(R.id.listsuggestion);
         bottomNavigationMenu = findViewById(R.id.barnavsuggestion);
         inputRechercher = findViewById(R.id.barrerechercheselonhumeur);
@@ -45,7 +47,7 @@ public class SuggestionFilm extends AppCompatActivity {
 
         }
         //Création de la ArrayList qui nous permettra de remplir la listView
-        updateListView("");
+        updateListView("",true);
         inputRechercher.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -55,7 +57,7 @@ public class SuggestionFilm extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 //lorsque le texte change, la vue s'update
-                updateListView("" + s);
+                updateListView("" + s,false);
             }
 
             @Override
@@ -86,7 +88,7 @@ public class SuggestionFilm extends AppCompatActivity {
 
     }
 
-    public void updateListView(String stringDepart) {
+    public void updateListView(String stringDepart,boolean firstlook) {
         ArrayList<HashMap<String, String>> listItem = new ArrayList<HashMap<String, String>>();
         //cette partie du code est base sur https://a-renouard.developpez.com/tutoriels/android/personnaliser-listview/
         //On déclare la HashMap qui contiendra les informations pour un item
@@ -98,7 +100,25 @@ public class SuggestionFilm extends AppCompatActivity {
         ) {
             for (int i = 0; i < temp.getHumeurlist().size(); i++) {
 
-                if (longueur <= temp.getHumeurlist().get(i).length() && stringDepart.equalsIgnoreCase(temp.getHumeurlist().get(i).substring(0, longueur))) {
+                if (longueur <= temp.getHumeurlist().get(i).length() && stringDepart.equalsIgnoreCase(temp.getHumeurlist().get(i).substring(0, longueur))&&!firstlook) {
+                    map = new HashMap<>();
+                    map.put("titre", temp.getTitre() + "  " + temp.getNote() + "/5");
+
+                    //on insère un élément description que l'on récupérera dans le textView description créé dans le fichier row.xml
+
+                    //on insère la référence à l'image (converti en String car normalement c'est un int) que l'on récupérera dans l'imageView créé dans le fichier row.xml
+                    map.put("duree", temp.getDuree());
+                    if(temp.isFavori()){
+                        map.put("img",String.valueOf(R.mipmap.yellowstar_foreground));
+                    }
+                    else{
+                        map.put("img",String.valueOf(R.mipmap.transpartentstar_foreground));
+                    }
+                    listItem.add(map);
+                    break;
+
+                }
+                else if(firstlook&&actuel.getHumeur().equalsIgnoreCase(temp.getHumeurlist().get(i))){
                     map = new HashMap<>();
                     map.put("titre", temp.getTitre() + "  " + temp.getNote() + "/5");
 

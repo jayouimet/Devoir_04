@@ -2,6 +2,7 @@ package com.example.devoir4film;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -20,7 +21,7 @@ public class favoris extends AppCompatActivity {
     ArrayList<Film> tabfilm;
     ListView maListView;
     EditText inputRechercher;
-    ImageView favorie;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +62,8 @@ public class favoris extends AppCompatActivity {
         //bar de navigation
         bottomNavigationMenu.setOnNavigationItemSelectedListener(item -> {
             if (item.getItemId() == R.id.homeNavigation) {
-
+                Intent intent=new Intent(this,SuggestionFilm.class);
+                startActivity(intent);
                 return true;
             } else if (item.getItemId() == R.id.favoriNavigation) {
 
