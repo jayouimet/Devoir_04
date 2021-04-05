@@ -32,7 +32,7 @@ public class SuggestionFilm extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suggestion);
-        actuel=new Utilisateur();
+        actuel=BD.user;
         maListView = findViewById(R.id.listsuggestion);
         bottomNavigationMenu = findViewById(R.id.barnavsuggestion);
         inputRechercher = findViewById(R.id.barrerechercheselonhumeur);
@@ -76,7 +76,8 @@ public class SuggestionFilm extends AppCompatActivity {
 
                 return true;
             } else if (item.getItemId() == R.id.humeurNavigation) {
-
+                Intent intent=new Intent(this,choisirHumeur.class);
+                startActivity(intent);
                 return true;
             } else if (item.getItemId() == R.id.profilNavigation) {
 
