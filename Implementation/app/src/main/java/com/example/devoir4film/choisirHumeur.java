@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
 
@@ -12,12 +15,30 @@ import java.util.HashMap;
 
 public class choisirHumeur extends AppCompatActivity {
     GridView gridView;
+    EditText editText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choisir_humeur);
         gridView=findViewById(R.id.gridhumeur);
+        editText=findViewById(R.id.searchhumeur);
         updateListView("");
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                updateListView(""+s);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
     public void updateListView(String stringDepart) {
         ArrayList<HashMap<String, String>> listItem = new ArrayList<HashMap<String, String>>();
@@ -30,8 +51,6 @@ public class choisirHumeur extends AppCompatActivity {
         //On refait la manip plusieurs fois avec des données différentes pour former les items de notre ListView
         for (String temp : BD.listHumeur
         ) {
-
-
                 if (longueur <= temp.length() && stringDepart.equalsIgnoreCase(temp.substring(0, longueur))) {
                     map = new HashMap<>();
                     map.put("titre", temp);
@@ -39,16 +58,11 @@ public class choisirHumeur extends AppCompatActivity {
                     //on insère un élément description que l'on récupérera dans le textView description créé dans le fichier row.xml
 
                     //on insère la référence à l'image (converti en String car normalement c'est un int) que l'on récupérera dans l'imageView créé dans le fichier row.xml
-
-
                     listItem.add(map);
-
-
-
-
             }
-
         }
+
+
 
         //Création d'un SimpleAdapter qui se chargera de mettre les items présents dans notre list (listItem) dans la vue row(chque cours)
         SimpleAdapter mSchedule = new SimpleAdapter(this.getBaseContext(), listItem, R.layout.elementpagehumeur,
