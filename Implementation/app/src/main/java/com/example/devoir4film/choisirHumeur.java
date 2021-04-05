@@ -20,9 +20,10 @@ public class choisirHumeur extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choisir_humeur);
+        //va chercher les elements visuels
         gridView=findViewById(R.id.gridhumeur);
         editText=findViewById(R.id.searchhumeur);
-        updateListView("");
+        updateListView("");//met les elements dans la grid
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -31,6 +32,7 @@ public class choisirHumeur extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //si barre recherche change
                 updateListView(""+s);
             }
 
@@ -53,18 +55,15 @@ public class choisirHumeur extends AppCompatActivity {
         ) {
                 if (longueur <= temp.length() && stringDepart.equalsIgnoreCase(temp.substring(0, longueur))) {
                     map = new HashMap<>();
+                    //met le titre de lhumeur
                     map.put("titre", temp);
-
-                    //on insère un élément description que l'on récupérera dans le textView description créé dans le fichier row.xml
-
-                    //on insère la référence à l'image (converti en String car normalement c'est un int) que l'on récupérera dans l'imageView créé dans le fichier row.xml
                     listItem.add(map);
             }
         }
 
 
 
-        //Création d'un SimpleAdapter qui se chargera de mettre les items présents dans notre list (listItem) dans la vue row(chque cours)
+        //Création d'un SimpleAdapter qui se chargera de mettre les items présents dans notre list (listItem) dans la vue row(chaque humeur)
         SimpleAdapter mSchedule = new SimpleAdapter(this.getBaseContext(), listItem, R.layout.elementpagehumeur,
                 new String[]{"titre"}, new int[]{R.id.titrehumeur});
 
@@ -80,6 +79,7 @@ public class choisirHumeur extends AppCompatActivity {
             HashMap<String, String> map1 = (HashMap<String, String>) gridView.getItemAtPosition(position);
             String titre=map1.get("titre");
             BD.user.setHumeur(titre);
+            //change dacivite en changeant humeur
             Intent intent=new Intent(this,SuggestionFilm.class);
             startActivity(intent);
 

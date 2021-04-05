@@ -32,21 +32,14 @@ public class SuggestionFilm extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suggestion);
-        actuel=BD.user;
+        actuel=BD.user;//utilisateur
+        //trouve les elements visuels
         maListView = findViewById(R.id.listsuggestion);
         bottomNavigationMenu = findViewById(R.id.barnavsuggestion);
         inputRechercher = findViewById(R.id.barrerechercheselonhumeur);
         favorie=findViewById(R.id.imageetoile);
-        tabfilm = new ArrayList<>();
-        for (int i = 1; i < 26; i++) {
-            Film temp = new Film("Film #" + i);
-            if(i%3==0){
-                temp.setFavori(true);
-            }
-            tabfilm.add(temp);
-
-        }
-        //Création de la ArrayList qui nous permettra de remplir la listView
+        tabfilm = BD.tabfilm;
+        //remplit la liste view
         updateListView("",true);
         inputRechercher.addTextChangedListener(new TextWatcher() {
             @Override
@@ -89,6 +82,11 @@ public class SuggestionFilm extends AppCompatActivity {
 
     }
 
+    /**
+     * update la list view
+     * @param stringDepart comment ca doit commencer pour afficher
+     * @param firstlook si est la premiere fois affiche ou upate a cause text change
+     */
     public void updateListView(String stringDepart,boolean firstlook) {
         ArrayList<HashMap<String, String>> listItem = new ArrayList<HashMap<String, String>>();
         //cette partie du code est base sur https://a-renouard.developpez.com/tutoriels/android/personnaliser-listview/
@@ -105,9 +103,9 @@ public class SuggestionFilm extends AppCompatActivity {
                     map = new HashMap<>();
                     map.put("titre", temp.getTitre() + "  " + temp.getNote() + "/5");
 
-                    //on insère un élément description que l'on récupérera dans le textView description créé dans le fichier row.xml
 
-                    //on insère la référence à l'image (converti en String car normalement c'est un int) que l'on récupérera dans l'imageView créé dans le fichier row.xml
+
+                    //on insere les divers info
                     map.put("duree", temp.getDuree());
                     if(temp.isFavori()){
                         map.put("img",String.valueOf(R.mipmap.yellowstar_foreground));
@@ -119,13 +117,12 @@ public class SuggestionFilm extends AppCompatActivity {
                     break;
 
                 }
+                //si cest la premiere fois affiche tout film qui a bonne humeur
                 else if(firstlook&&actuel.getHumeur().equalsIgnoreCase(temp.getHumeurlist().get(i))){
                     map = new HashMap<>();
                     map.put("titre", temp.getTitre() + "  " + temp.getNote() + "/5");
 
-                    //on insère un élément description que l'on récupérera dans le textView description créé dans le fichier row.xml
-
-                    //on insère la référence à l'image (converti en String car normalement c'est un int) que l'on récupérera dans l'imageView créé dans le fichier row.xml
+                    //on insire diverse informations
                     map.put("duree", temp.getDuree());
                     if(temp.isFavori()){
                         map.put("img",String.valueOf(R.mipmap.yellowstar_foreground));
@@ -140,7 +137,7 @@ public class SuggestionFilm extends AppCompatActivity {
 
         }
 
-        //Création d'un SimpleAdapter qui se chargera de mettre les items présents dans notre list (listItem) dans la vue row(chque cours)
+        //Création d'un SimpleAdapter qui se chargera de mettre les items présents dans notre list (listItem) dans la vue row(chaque film)
         SimpleAdapter mSchedule = new SimpleAdapter(this.getBaseContext(), listItem, R.layout.rangefilmsuggestion,
                 new String[]{"titre", "duree","img"}, new int[]{R.id.titrenote, R.id.dureetextbox,R.id.imageetoile});
 
@@ -152,7 +149,7 @@ public class SuggestionFilm extends AppCompatActivity {
         });*/
         //Enfin on met un écouteur d'évènement sur notre listView
         maListView.setOnItemClickListener((a, v, position, id) -> {
-            //on récupère la HashMap contenant les infos de notre item (titre, description, img)
+            //on récupère la HashMap contenant les infos de notre item (titre)
             HashMap<String, String> map1 = (HashMap<String, String>) maListView.getItemAtPosition(position);
 
 

@@ -27,21 +27,17 @@ public class favoris extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favoris);
+        //va chercher les elements visuels
         maListView = findViewById(R.id.listfavori);
         bottomNavigationMenu = findViewById(R.id.barnavfav);
         inputRechercher = findViewById(R.id.barrerechercheselonhumeurfavoris);
 
-        tabfilm = new ArrayList<>();
-        for (int i = 1; i < 26; i++) {
-            Film temp = new Film("Film #" + i);
-            if (i % 3 == 0) {
-                temp.setFavori(true);
-            }
-            tabfilm.add(temp);
+        tabfilm = BD.tabfilm;
 
-        }
-        //Création de la ArrayList qui nous permettra de remplir la listView
+
+        //remplit liste
         updateListView("");
+        //si barre recherche change
         inputRechercher.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -69,7 +65,8 @@ public class favoris extends AppCompatActivity {
 
                 return true;
             } else if (item.getItemId() == R.id.humeurNavigation) {
-
+                Intent intent=new Intent(this,choisirHumeur.class);
+                startActivity(intent);
                 return true;
             } else if (item.getItemId() == R.id.profilNavigation) {
 
@@ -98,9 +95,7 @@ public class favoris extends AppCompatActivity {
                         map = new HashMap<>();
                         map.put("titre", temp.getTitre() + "  " + temp.getNote() + "/5");
 
-                        //on insère un élément description que l'on récupérera dans le textView description créé dans le fichier row.xml
-
-                        //on insère la référence à l'image (converti en String car normalement c'est un int) que l'on récupérera dans l'imageView créé dans le fichier row.xml
+                        //met les informations dans les elements
                         map.put("duree", temp.getDuree());
 
                         map.put("img", String.valueOf(R.mipmap.yellowstar_foreground));
