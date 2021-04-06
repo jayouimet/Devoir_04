@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -120,7 +121,8 @@ public class SuggestionFilm extends AppCompatActivity {
                 //si cest la premiere fois affiche tout film qui a bonne humeur
                 else if(firstlook&&actuel.getHumeur().equalsIgnoreCase(temp.getHumeurlist().get(i))){
                     map = new HashMap<>();
-                    map.put("titre", temp.getTitre() + "  " + temp.getNote() + "/5");
+                    map.put("titre", temp.getTitre() );
+                    map.put("note",temp.getNote() + "/5");
 
                     //on insire diverse informations
                     map.put("duree", temp.getDuree());
@@ -139,7 +141,7 @@ public class SuggestionFilm extends AppCompatActivity {
 
         //Création d'un SimpleAdapter qui se chargera de mettre les items présents dans notre list (listItem) dans la vue row(chaque film)
         SimpleAdapter mSchedule = new SimpleAdapter(this.getBaseContext(), listItem, R.layout.rangefilmsuggestion,
-                new String[]{"titre", "duree","img"}, new int[]{R.id.titrenote, R.id.dureetextbox,R.id.imageetoile});
+                new String[]{"titre", "duree","img","note"}, new int[]{R.id.titrenote, R.id.dureetextbox,R.id.imageetoile,R.id.notefilm});
 
 
         //On attribue à notre listView l'adapter que l'on vient de créer
@@ -152,6 +154,8 @@ public class SuggestionFilm extends AppCompatActivity {
             //on récupère la HashMap contenant les infos de notre item (titre)
             HashMap<String, String> map1 = (HashMap<String, String>) maListView.getItemAtPosition(position);
             Intent intent=new Intent(this,filmDescription.class);
+            intent.putExtra("titre",map1.get("titre"));
+            Log.d("tage",map1.get("titre"));
             startActivity(intent);
 
 

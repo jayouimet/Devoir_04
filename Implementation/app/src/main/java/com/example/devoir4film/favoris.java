@@ -93,8 +93,8 @@ public class favoris extends AppCompatActivity {
 
                     if (longueur <= temp.getHumeurlist().get(i).length() && stringDepart.equalsIgnoreCase(temp.getHumeurlist().get(i).substring(0, longueur))) {
                         map = new HashMap<>();
-                        map.put("titre", temp.getTitre() + "  " + temp.getNote() + "/5");
-
+                        map.put("titre", temp.getTitre() );
+                        map.put("note",temp.getNote() + "/5");
                         //met les informations dans les elements
                         map.put("duree", temp.getDuree());
 
@@ -111,7 +111,7 @@ public class favoris extends AppCompatActivity {
 
         //Création d'un SimpleAdapter qui se chargera de mettre les items présents dans notre list (listItem) dans la vue row(chque cours)
         SimpleAdapter mSchedule = new SimpleAdapter(this.getBaseContext(), listItem, R.layout.rangefilmsuggestion,
-                new String[]{"titre", "duree", "img"}, new int[]{R.id.titrenote, R.id.dureetextbox, R.id.imageetoile});
+                new String[]{"titre", "duree", "img","note"}, new int[]{R.id.titrenote, R.id.dureetextbox, R.id.imageetoile,R.id.notefilm});
 
 
         //On attribue à notre listView l'adapter que l'on vient de créer

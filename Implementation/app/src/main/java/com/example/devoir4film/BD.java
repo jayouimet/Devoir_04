@@ -25,6 +25,15 @@ public class BD {
       return tableaufilm;
 
    }
+   public static   Film findFilm(String titre ){
+      for (Film temp:tabfilm){
+         if(temp.getTitre().equalsIgnoreCase(titre)){
+            return temp;
+         }
+
+      }
+      return null;
+   }
 
 
 }
