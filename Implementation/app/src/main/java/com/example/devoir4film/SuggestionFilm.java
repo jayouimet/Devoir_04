@@ -151,6 +151,8 @@ public class SuggestionFilm extends AppCompatActivity {
         maListView.setOnItemClickListener((a, v, position, id) -> {
             //on récupère la HashMap contenant les infos de notre item (titre)
             HashMap<String, String> map1 = (HashMap<String, String>) maListView.getItemAtPosition(position);
+            Intent intent=new Intent(this,filmDescription.class);
+            startActivity(intent);
 
 
         });
