@@ -8,4 +8,9 @@
     <string name="favorinav">Vos favoris</string>
     <string name="sentez">Commment vous sentez-vous ajourd\'hui?</string>
     <string name="recherche">Recherche</string>
+    <string name="directeur">Directeur:</string>
+    <string name="realisateur">Réalisateur:</string>
+    <string name="annnee">Année:</string>
+    <string name="genre">Genre:</string>
+    <string name="acteur">Acteurs:</string>
 </resources>

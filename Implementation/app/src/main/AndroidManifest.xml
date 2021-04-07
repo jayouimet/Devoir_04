@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Devoir4Film">
-        <activity android:name=".choisirHumeur"></activity>
+        <activity android:name=".filmDescription"></activity>
+        <activity android:name=".choisirHumeur" />
         <activity android:name=".favoris" />
         <activity android:name=".SuggestionFilm">
             <intent-filter>
