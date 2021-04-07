@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Devoir4Film">
-        <activity android:name=".ParametresCompte"></activity>
+        <activity android:name=".CreationCompte"></activity>
+        <activity android:name=".ParametresCompte" />
         <activity android:name=".filmDescription" />
         <activity android:name=".choisirHumeur" />
         <activity android:name=".favoris" />
