@@ -13,4 +13,8 @@
     <string name="annnee">Année:</string>
     <string name="genre">Genre:</string>
     <string name="acteur">Acteurs:</string>
+    <string name="description">Description:</string>
+    <string name="dejavisionner">Déjà visionné:</string>
+    <string name="humeurcorrespondante">Humeurs correspondantes:</string>
+
 </resources>

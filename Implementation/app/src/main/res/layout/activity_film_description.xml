@@ -37,7 +37,7 @@
                 android:id="@+id/descriptionlabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Description:"
+                android:text="@string/description"
                 android:textSize="20dp"
                 android:textStyle="bold"></TextView>
 
@@ -51,7 +51,7 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="272dp"
+                android:layout_height="249dp"
                 android:src="@mipmap/cloud"></ImageView>
 
             <LinearLayout
@@ -64,14 +64,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/realisateur"
-                    android:textSize="20dp"></TextView>
+                    android:textSize="20dp"
+                    android:textStyle="bold"></TextView>
 
                 <TextView
-                    android:textSize="18dp"
                     android:id="@+id/realisateur"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Bruh"
+                    android:textSize="18dp"
                     android:translationX="28dp"></TextView>
 
 
@@ -88,7 +89,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/directeur"
                     android:textSize="20dp"
-                    ></TextView>
+                    android:textStyle="bold"></TextView>
 
                 <TextView
                     android:id="@+id/producteur"
@@ -102,8 +103,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/acteurlabel"
@@ -111,17 +111,15 @@
                     android:layout_height="wrap_content"
                     android:text="@string/acteur"
                     android:textSize="20dp"
-
-                    ></TextView>
+                    android:textStyle="bold"></TextView>
 
                 <TextView
                     android:id="@+id/acteurs"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Bruh"
-                    android:translationX="60dp"
                     android:textSize="18dp"
-                    ></TextView>
+                    android:translationX="60dp"></TextView>
             </LinearLayout>
 
             <LinearLayout
@@ -135,15 +133,15 @@
                     android:layout_height="wrap_content"
                     android:text="@string/genre"
                     android:textSize="20dp"
-                    ></TextView>
+                    android:textStyle="bold"></TextView>
 
                 <TextView
                     android:id="@+id/genres"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Bruh"
-                    android:translationX="74dp"
-                    android:textSize="18dp"></TextView>
+                    android:textSize="18dp"
+                    android:translationX="74dp"></TextView>
             </LinearLayout>
 
             <LinearLayout
@@ -156,21 +154,87 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/annnee"
-                    android:textSize="20dp"></TextView>
+                    android:textSize="20dp"
+                    android:textStyle="bold"></TextView>
 
                 <TextView
                     android:id="@+id/annees"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Bruh"
-                    android:translationX="70dp"
-                    android:textSize="18dp"></TextView>
+                    android:textSize="18dp"
+                    android:translationX="70dp"></TextView>
             </LinearLayout>
+            <TextView
+                android:id="@+id/notelabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dejavisionner"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/transpartentstar_foreground"></ImageView>
+
+                <ImageView
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/transpartentstar_foreground"></ImageView>
+
+                <ImageView
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/transpartentstar_foreground"></ImageView>
+
+                <ImageView
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/transpartentstar_foreground"></ImageView>
+
+                <ImageView
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/transpartentstar_foreground"></ImageView>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/humeurcorrespondante"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/humeurcorrespondante"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="125dp"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/angryreact_foreground"></ImageView>
+
+                <ImageView
+                    android:layout_width="125dp"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/angryreact_foreground"></ImageView>
+
+                <ImageView
+                    android:layout_width="125dp"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/angryreact_foreground"></ImageView>
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imagestardescription"
         android:layout_width="94dp"
         android:layout_height="87dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -183,9 +247,13 @@
         android:layout_width="413dp"
         android:layout_height="71dp"
         android:layout_marginTop="2dp"
+        app:itemBackground="@color/white"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollviewfilm"
-        app:menu="@menu/navigation"/>
+        app:menu="@menu/navigation" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
