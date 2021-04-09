@@ -102,7 +102,8 @@ public class SuggestionFilm extends AppCompatActivity {
 
                 if (longueur <= temp.getHumeurlist().get(i).length() && stringDepart.equalsIgnoreCase(temp.getHumeurlist().get(i).substring(0, longueur))&&!firstlook) {
                     map = new HashMap<>();
-                    map.put("titre", temp.getTitre() + "  " + temp.getNote() + "/5");
+                    map.put("titre", temp.getTitre() );
+                    map.put("note",temp.getNote() + "/5");
 
 
 
@@ -122,6 +123,7 @@ public class SuggestionFilm extends AppCompatActivity {
                 else if(firstlook&&actuel.getHumeur().equalsIgnoreCase(temp.getHumeurlist().get(i))){
                     map = new HashMap<>();
                     map.put("titre", temp.getTitre() );
+                    Log.d("tagertitre",temp.getTitre());
                     map.put("note",temp.getNote() + "/5");
 
                     //on insire diverse informations
@@ -146,9 +148,7 @@ public class SuggestionFilm extends AppCompatActivity {
 
         //On attribue à notre listView l'adapter que l'on vient de créer
         maListView.setAdapter(mSchedule);
-        /*favorie.setOnClickListener(v -> {
-            favorie.setImageResource(R.mipmap.yellowstar_foreground);
-        });*/
+
         //Enfin on met un écouteur d'évènement sur notre listView
         maListView.setOnItemClickListener((a, v, position, id) -> {
             //on récupère la HashMap contenant les infos de notre item (titre)

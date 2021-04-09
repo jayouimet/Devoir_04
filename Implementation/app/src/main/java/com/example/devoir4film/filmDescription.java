@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.HashMap;
+
 public class filmDescription extends AppCompatActivity {
     TextView description;
     TextView titreFilm;
@@ -20,7 +22,9 @@ public class filmDescription extends AppCompatActivity {
     TextView genre;
     Film actuel;
     ImageView imagestar;
-    ImageView firstStar;
+    ImageView premiereEmotion;
+    ImageView deuxiemeEmotion;
+    ImageView troisiemeEmotion;
     BottomNavigationView bottomNavigationView;
 
     @Override
@@ -36,8 +40,11 @@ public class filmDescription extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.barnavigationdescription);
         String titre = getIntent().getStringExtra("titre");
         titreFilm = findViewById(R.id.titrefilm);
-
+        premiereEmotion = findViewById(R.id.premiereemotion);
+        deuxiemeEmotion=findViewById(R.id.deuxiemeemotion);
+        troisiemeEmotion=findViewById(R.id.troisiemeemotion);
         actuel = BD.findFilm(titre);
+        Log.d("tager",titre);
         description.setText(actuel.getDescription());
         titreFilm.setText(actuel.getTitre());
         annnes.setText(actuel.getAnnees());
@@ -66,6 +73,25 @@ public class filmDescription extends AppCompatActivity {
 
             return false;
         });
+        HashMap<String, Integer> mapEmotion = BD.getMapEmotion();
+        Integer numImgPremiere = mapEmotion.get(actuel.getHumeurlist().get(0));
+        if (numImgPremiere != null) {
+            premiereEmotion.setImageResource(numImgPremiere);
+        } else {
+            premiereEmotion.setImageResource(R.mipmap.neutral_foreground);
+        }
+        Integer numImgDeux = mapEmotion.get(actuel.getHumeurlist().get(1));
+        if (numImgDeux != null) {
+            deuxiemeEmotion.setImageResource(numImgDeux);
+        } else {
+            deuxiemeEmotion.setImageResource(R.mipmap.neutral_foreground);
+        }
+        Integer numImgTrois = mapEmotion.get(actuel.getHumeurlist().get(2));
+        if (numImgTrois != null) {
+            troisiemeEmotion.setImageResource(numImgTrois);
+        } else {
+            troisiemeEmotion.setImageResource(R.mipmap.neutral_foreground);
+        }
 
 
     }

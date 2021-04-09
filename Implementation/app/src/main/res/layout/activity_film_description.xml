@@ -230,16 +230,19 @@
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/premiereemotion"
+                    android:layout_width="125dp"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/lovereact_foreground"></ImageView>
+
+                <ImageView
+                    android:id="@+id/deuxiemeemotion"
                     android:layout_width="125dp"
                     android:layout_height="match_parent"
                     android:src="@mipmap/angryreact_foreground"></ImageView>
 
                 <ImageView
-                    android:layout_width="125dp"
-                    android:layout_height="match_parent"
-                    android:src="@mipmap/angryreact_foreground"></ImageView>
-
-                <ImageView
+                    android:id="@+id/troisiemeemotion"
                     android:layout_width="125dp"
                     android:layout_height="match_parent"
                     android:src="@mipmap/angryreact_foreground"></ImageView>
