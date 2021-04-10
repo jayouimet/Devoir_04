@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -116,16 +117,22 @@ public class favoris extends AppCompatActivity {
 
         //On attribue à notre listView l'adapter que l'on vient de créer
         maListView.setAdapter(mSchedule);
-        /*favorie.setOnClickListener(v -> {
-            favorie.setImageResource(R.mipmap.yellowstar_foreground);
-        });*/
+
         //Enfin on met un écouteur d'évènement sur notre listView
         maListView.setOnItemClickListener((a, v, position, id) -> {
             //on récupère la HashMap contenant les infos de notre item (titre, description, img)
+
             HashMap<String, String> map1 = (HashMap<String, String>) maListView.getItemAtPosition(position);
+            Intent intent=new Intent(this,filmDescription.class);
+            intent.putExtra("titre",map1.get("titre"));
+
+            startActivity(intent);
 
 
         });
+    }
+    public void goBackFavoris(View v){
+        this.finish();
     }
 
 
