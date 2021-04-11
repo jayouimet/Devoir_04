@@ -155,7 +155,7 @@ public class SuggestionFilm extends AppCompatActivity {
             HashMap<String, String> map1 = (HashMap<String, String>) maListView.getItemAtPosition(position);
             Intent intent=new Intent(this,filmDescription.class);
             intent.putExtra("titre",map1.get("titre"));
-            Log.d("tage",map1.get("titre"));
+
             startActivity(intent);
 
 

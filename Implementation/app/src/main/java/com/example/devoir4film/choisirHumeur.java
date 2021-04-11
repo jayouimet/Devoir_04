@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
@@ -93,5 +94,8 @@ public class choisirHumeur extends AppCompatActivity {
 
 
         });
+    }
+    public void goBackHumeur(View v){
+        this.finish();
     }
 }

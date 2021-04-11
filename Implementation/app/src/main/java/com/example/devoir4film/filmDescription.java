@@ -31,6 +31,7 @@ public class filmDescription extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_film_description);
+        //va chercher les elements visuels de la page
         description = findViewById(R.id.descriptionfilm);
         producteur = findViewById(R.id.producteur);
         realisateur = findViewById(R.id.realisateur);
@@ -38,14 +39,16 @@ public class filmDescription extends AppCompatActivity {
         annnes = findViewById(R.id.annees);
         imagestar = findViewById(R.id.imagestardescription);
         bottomNavigationView = findViewById(R.id.barnavigationdescription);
+        //va chercher le titre du film
         String titre = getIntent().getStringExtra("titre");
         titreFilm = findViewById(R.id.titrefilm);
         premiereEmotion = findViewById(R.id.premiereemotion);
         deuxiemeEmotion=findViewById(R.id.deuxiemeemotion);
         troisiemeEmotion=findViewById(R.id.troisiemeemotion);
-        actuel = BD.findFilm(titre);
-        Log.d("tager",titre);
+        actuel = BD.findFilm(titre);//va chercher le film dans la BD
+
         description.setText(actuel.getDescription());
+        ///met les informations a leur endroit
         titreFilm.setText(actuel.getTitre());
         annnes.setText(actuel.getAnnees());
         genre.setText(actuel.getGenres());
@@ -73,7 +76,11 @@ public class filmDescription extends AppCompatActivity {
 
             return false;
         });
+        if(actuel.isFavori()){
+            imagestar.setImageResource(R.mipmap.yellowstar_foreground);
+        }
         HashMap<String, Integer> mapEmotion = BD.getMapEmotion();
+        //met les emoticones pour les emotions correspondantes
         Integer numImgPremiere = mapEmotion.get(actuel.getHumeurlist().get(0));
         if (numImgPremiere != null) {
             premiereEmotion.setImageResource(numImgPremiere);
@@ -95,7 +102,7 @@ public class filmDescription extends AppCompatActivity {
 
 
     }
-
+    //change l'image de favori
     public void clickImages(View v) {
         if (!(actuel.isFavori())) {
             imagestar.setImageResource(R.mipmap.yellowstar_foreground);
@@ -109,6 +116,10 @@ public class filmDescription extends AppCompatActivity {
 
     ;
 
+    /**
+     * si clique 1 etoile
+     * @param v image de une etoile
+     */
     public void click1Star(View v) {
         View temp = findViewById(R.id.page);
         actuel.setNote(1);
@@ -116,37 +127,45 @@ public class filmDescription extends AppCompatActivity {
         for (int i = 1; i < 2; i++) {
             ImageView star = temp.findViewWithTag("star" + i);
 
-
+            //la premiere etoile jaune
             star.setImageResource(R.mipmap.yellowstar_foreground);
         }
         for (int i = 2; i < 6; i++) {
             ImageView star = temp.findViewWithTag("star" + i);
 
-
+            //reste transparent
             star.setImageResource(R.mipmap.transpartentstar_foreground);
         }
 
 
     }
 
+    /**
+     * met 2 etoile jaune
+     * @param v
+     */
     public void click2Star(View v) {
         View temp = findViewById(R.id.page);
         actuel.setNote(2);
 
         for (int i = 1; i < 3; i++) {
             ImageView star = temp.findViewWithTag("star" + i);
-
+            //2 premiere etoile jaune
 
             star.setImageResource(R.mipmap.yellowstar_foreground);
         }
         for (int i = 3; i < 6; i++) {
             ImageView star = temp.findViewWithTag("star" + i);
-
+            //reste transparent
 
             star.setImageResource(R.mipmap.transpartentstar_foreground);
         }
     }
 
+    /**
+     * met 3 etoile jaune
+     * @param v
+     */
     public void click3Star(View v) {
 
         View temp = findViewById(R.id.page);
@@ -154,36 +173,44 @@ public class filmDescription extends AppCompatActivity {
 
         for (int i = 1; i < 4; i++) {
             ImageView star = temp.findViewWithTag("star" + i);
-
+            //met 3 premiere jaune
 
             star.setImageResource(R.mipmap.yellowstar_foreground);
         }
         for (int i = 4; i < 6; i++) {
             ImageView star = temp.findViewWithTag("star" + i);
-
+            //reste transparent
             star.setImageResource(R.mipmap.transpartentstar_foreground);
         }
     }
 
+    /**
+     * met 4 etoile jaune
+     * @param v
+     */
     public void click4Star(View v) {
         View temp = findViewById(R.id.page);
         actuel.setNote(4);
-
+        //met 4 premiere jaune
         for (int i = 1; i < 5; i++) {
             ImageView star = temp.findViewWithTag("star" + i);
             star.setImageResource(R.mipmap.yellowstar_foreground);
         }
         for (int i = 5; i < 6; i++) {
             ImageView star = temp.findViewWithTag("star" + i);
-
+            //la derniere est transparentes
             star.setImageResource(R.mipmap.transpartentstar_foreground);
         }
     }
 
+    /**
+     * met 5 etoiles transparentes
+     * @param v
+     */
     public void click5Star(View v) {
         View temp = findViewById(R.id.page);
         actuel.setNote(5);
-
+        //met tout jaune
         for (int i = 1; i < 6; i++) {
             ImageView star = temp.findViewWithTag("star" + i);
 
@@ -191,5 +218,8 @@ public class filmDescription extends AppCompatActivity {
             star.setImageResource(R.mipmap.yellowstar_foreground);
         }
 
+    }
+    public void goBackDescription(View v){
+        this.finish();
     }
 }

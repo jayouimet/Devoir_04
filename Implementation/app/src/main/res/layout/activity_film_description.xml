@@ -11,19 +11,20 @@
         android:id="@+id/titrefilm"
         android:layout_width="165dp"
         android:layout_height="62dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:id="@+id/scrollviewfilm"
-        android:layout_width="373dp"
-        android:layout_height="554dp"
+        android:layout_width="384dp"
+        android:layout_height="516dp"
         android:layout_marginBottom="68dp"
+        android:translationX="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.578"
@@ -181,37 +182,37 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:onClick="click1Star"
                     android:layout_width="75dp"
                     android:layout_height="match_parent"
+                    android:onClick="click1Star"
                     android:src="@mipmap/transpartentstar_foreground"
                     android:tag="star1"></ImageView>
 
                 <ImageView
-                    android:onClick="click2Star"
                     android:layout_width="75dp"
                     android:layout_height="match_parent"
+                    android:onClick="click2Star"
                     android:src="@mipmap/transpartentstar_foreground"
                     android:tag="star2"></ImageView>
 
                 <ImageView
-                    android:onClick="click3Star"
                     android:layout_width="75dp"
                     android:layout_height="match_parent"
+                    android:onClick="click3Star"
                     android:src="@mipmap/transpartentstar_foreground"
                     android:tag="star3"></ImageView>
 
                 <ImageView
-                    android:onClick="click4Star"
                     android:layout_width="75dp"
                     android:layout_height="match_parent"
+                    android:onClick="click4Star"
                     android:src="@mipmap/transpartentstar_foreground"
                     android:tag="star4"></ImageView>
 
                 <ImageView
-                    android:onClick="click5Star"
                     android:layout_width="75dp"
                     android:layout_height="match_parent"
+                    android:onClick="click5Star"
                     android:src="@mipmap/transpartentstar_foreground"
                     android:tag="star5"></ImageView>
             </LinearLayout>
@@ -275,5 +276,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollviewfilm"
         app:menu="@menu/navigation" />
+
+    <ImageView
+        android:onClick="goBackDescription"
+        android:id="@+id/retourDescription"
+        android:layout_width="37dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="52dp"
+        app:layout_constraintEnd_toStartOf="@+id/titrefilm"
+        app:layout_constraintHorizontal_bias="0.577"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
