@@ -9,19 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Devoir4Film">
-        <activity android:name=".AjouterCompte"></activity>
-        <activity android:name=".CreationCompte" />
-        <activity android:name=".ParametresCompte" />
-        <activity android:name=".filmDescription" />
-        <activity android:name=".choisirHumeur" />
-        <activity android:name=".favoris" />
-        <activity android:name=".SuggestionFilm">
+        <activity android:name=".ForgotPwdActivity"></activity>
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AjouterCompte" />
+        <activity android:name=".CreationCompte" />
+        <activity android:name=".ParametresCompte" />
+        <activity android:name=".filmDescription" />
+        <activity android:name=".choisirHumeur" />
+        <activity android:name=".favoris" />
+        <activity android:name=".SuggestionFilm" />
     </application>
 
 </manifest>

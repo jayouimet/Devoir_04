@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ForgotPwdActivity">
+
+    <TextView
+        android:id="@+id/forgotEmailLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:gravity="center"
+        android:text="@string/forgot_email_label"
+        android:textColor="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forgotPasswordReinitialiseButton" />
+
+    <Button
+        android:id="@+id/forgotPasswordReinitialiseButton"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="?attr/colorPrimary"
+        android:text="@string/forgot_password_reinitialise_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forgotPasswordEmailLayout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/forgotPasswordEmailLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="@android:color/transparent"
+        android:ems="10"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forgotPasswordTitleLabel">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/forgotPasswordEmailTextBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:hint="@string/email_hint"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/forgotPasswordTitleLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/forgot_password_title_label"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/forgotPasswordMessageSentLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/forgot_password_message_sent_label"
+        android:textColor="@color/design_default_color_error"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forgotEmailLabel"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>
