@@ -33,6 +33,8 @@ public class favoris extends AppCompatActivity {
         bottomNavigationMenu = findViewById(R.id.barnavfav);
         inputRechercher = findViewById(R.id.barrerechercheselonhumeurfavoris);
 
+        bottomNavigationMenu.setSelectedItemId(R.id.favoriNavigation);
+
         tabfilm = BD.tabfilm;
 
 
