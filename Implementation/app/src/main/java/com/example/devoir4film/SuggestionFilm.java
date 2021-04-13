@@ -74,7 +74,8 @@ public class SuggestionFilm extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             } else if (item.getItemId() == R.id.profilNavigation) {
-
+                Intent intent=new Intent(this,ParametresCompte.class);
+                startActivity(intent);
                 return true;
             }
 
