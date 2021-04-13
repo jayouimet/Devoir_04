@@ -23,10 +23,16 @@
     <string name="login_label">Se Connecter</string>
     <string name="forgot_password_label">Mot de passe oublié?</string>
     <string name="create_new_account_label">Créer un nouveau compte</string>
-    <string name="login_as_guest_label">Se connecter en temps qu\'invité</string>
+    <string name="login_as_guest_label">Se connecter en tant qu\'invité</string>
 
     <string name="forgot_password_title_label">Entrez votre courriel pour réinitialiser votre mot de passe</string>
     <string name="forgot_password_reinitialise_label">Réinitialiser</string>
-    <string name="forgot_password_message_sent_label">Un lien de réinitialisation vous a été envoyé par courriel. (Fonctionnalité non implémentée)</string>
+    <string name="forgot_password_message_sent_label">Un lien de réinitialisation vous a été envoyé par courriel. (Fonctionnalité non implémentée cliquez ici pour le test)</string>
     <string name="forgot_email_label">Adresse courriel oubliée?</string>
+
+    <string name="change_password_title_label">Changement du mot de passe</string>
+    <string name="change_password_new_password_hint">Nouveau mot de passe</string>
+    <string name="change_password_confirm_password_hint">Confirmer le mot de passe</string>
+    <string name="change_password_change_button_label">Changer le mot de passe</string>
+    <string name="change_password_error_message_label">Le mot de passe et sa confirmation doivent correspondre</string>
 </resources>

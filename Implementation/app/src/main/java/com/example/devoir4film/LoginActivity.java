@@ -11,14 +11,11 @@ import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.text.style.UnderlineSpan;
-import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
-
-import java.time.temporal.ValueRange;
 
 public class LoginActivity extends AppCompatActivity {
     private Button loginButton;
@@ -35,9 +32,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // On réfère l'UI au fichier logique
-        this.loginButton = findViewById(R.id.loginButton);
+        this.loginButton = findViewById(R.id.changePasswordButton);
         this.emailTextBox = findViewById(R.id.emailTextBox);
-        this.passwordTextBox = findViewById(R.id.passwordTextBox);
+        this.passwordTextBox = findViewById(R.id.changePasswordTextBox);
         this.connectionErrorLabel = findViewById(R.id.connectionErrorLabel);
         this.connectionErrorLabel.setVisibility(View.GONE);
         this.forgotPasswordLabel = findViewById(R.id.forgotPasswordLabel);

@@ -9,21 +9,40 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Devoir4Film">
-        <activity android:name=".ForgotPwdActivity"></activity>
-        <activity android:name=".LoginActivity">
+        <activity android:name=".ChangePasswordActivity"></activity>
+        <activity
+            android:name=".ForgotPwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AjouterCompte" />
-        <activity android:name=".CreationCompte" />
-        <activity android:name=".ParametresCompte" />
-        <activity android:name=".filmDescription" />
-        <activity android:name=".choisirHumeur" />
-        <activity android:name=".favoris" />
-        <activity android:name=".SuggestionFilm" />
+        <activity
+            android:name=".AjouterCompte"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CreationCompte"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParametresCompte"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".filmDescription"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".choisirHumeur"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".favoris"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SuggestionFilm"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
