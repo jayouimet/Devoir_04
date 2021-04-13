@@ -26,72 +26,72 @@ public class AjouterCompte extends AppCompatActivity {
 
 
 
-//        // Lorsque l'utilisateur clique sur l'icône  du premier compte, il est ramené vers la page « Connexion »
-//        ivPremierCompte = (ImageView) findViewById(R.id.ivPremierCompte);
-//        ivPremierCompte.setOnClickListener(new View.OnClickListener() {
-//                                                     @Override
-//                                                     public void onClick(View v) {
-//                                                         Intent intent = new Intent(AjouterCompte.this, Connexion.class);
-//                                                         startActivity(intent);
-//                                                     }
-//                                                 }
-//        );
-//
-//        // Lorsque l'utilisateur clique sur le texte « Premier Compte », il est ramené vers la page « Connexion »
-//        tvPremierCompte = (TextView) findViewById(R.id.tvPremierCompte);
-//        tvPremierCompte.setOnClickListener(new View.OnClickListener() {
-//                                               @Override
-//                                               public void onClick(View v) {
-//                                                   Intent intent = new Intent(AjouterCompte.this, Connexion.class);
-//                                                   startActivity(intent);
-//                                               }
-//                                           }
-//        );
-//
-//
-//        // Lorsque l'utilisateur clique sur l'icône  du deuxième compte, il est ramené vers la page « Connexion »
-//        ivDeuxiemeCompte = (ImageView) findViewById(R.id.ivDeuxiemeCompte);
-//        ivDeuxiemeCompte.setOnClickListener(new View.OnClickListener() {
-//                                               @Override
-//                                               public void onClick(View v) {
-//                                                   Intent intent = new Intent(AjouterCompte.this, Connexion.class);
-//                                                   startActivity(intent);
-//                                               }
-//                                           }
-//        );
-//
-//        // Lorsque l'utilisateur clique sur le texte « Deuxième Compte », il est ramené vers la page « Connexion »
-//        tvDeuxiemeCompte = (TextView) findViewById(R.id.tvDeuxiemeCompte);
-//        tvDeuxiemeCompte.setOnClickListener(new View.OnClickListener() {
-//                                               @Override
-//                                               public void onClick(View v) {
-//                                                   Intent intent = new Intent(AjouterCompte.this, Connexion.class);
-//                                                   startActivity(intent);
-//                                               }
-//                                           }
-//        );
-//
-//        // Lorsque l'utilisateur clique sur l'icône  du troisième compte, il est ramené vers la page « Connexion »
-//        ivTroisiemeCompte = (ImageView) findViewById(R.id.ivTroisiemeCompte);
-//        ivTroisiemeCompte.setOnClickListener(new View.OnClickListener() {
-//                                               @Override
-//                                               public void onClick(View v) {
-//                                                   Intent intent = new Intent(AjouterCompte.this, Connexion.class);
-//                                                   startActivity(intent);
-//                                               }
-//                                           }
-//        );
-//
-//        // Lorsque l'utilisateur clique sur le texte « Troisième Compte », il est ramené vers la page « Connexion »
-//        tvTroisiemeCompte = (TextView) findViewById(R.id.tvTroisiemeCompte);
-//        tvTroisiemeCompte.setOnClickListener(new View.OnClickListener() {
-//                                               @Override
-//                                               public void onClick(View v) {
-//                                                   Intent intent = new Intent(AjouterCompte.this, Connexion.class);
-//                                                   startActivity(intent);
-//                                               }
-//                                           }
-//        );
+        // Lorsque l'utilisateur clique sur l'icône  du premier compte, il est ramené vers la page « Connexion »
+        ivPremierCompte = (ImageView) findViewById(R.id.ivPremierCompte);
+        ivPremierCompte.setOnClickListener(new View.OnClickListener() {
+                                                     @Override
+                                                     public void onClick(View v) {
+                                                         Intent intent = new Intent(AjouterCompte.this, LoginActivity.class);
+                                                         startActivity(intent);
+                                                     }
+                                                 }
+        );
+
+        // Lorsque l'utilisateur clique sur le texte « Premier Compte », il est ramené vers la page « Connexion »
+        tvPremierCompte = (TextView) findViewById(R.id.tvPremierCompte);
+        tvPremierCompte.setOnClickListener(new View.OnClickListener() {
+                                               @Override
+                                               public void onClick(View v) {
+                                                   Intent intent = new Intent(AjouterCompte.this, LoginActivity.class);
+                                                   startActivity(intent);
+                                               }
+                                           }
+        );
+
+
+        // Lorsque l'utilisateur clique sur l'icône  du deuxième compte, il est ramené vers la page « Connexion »
+        ivDeuxiemeCompte = (ImageView) findViewById(R.id.ivDeuxiemeCompte);
+        ivDeuxiemeCompte.setOnClickListener(new View.OnClickListener() {
+                                               @Override
+                                               public void onClick(View v) {
+                                                   Intent intent = new Intent(AjouterCompte.this, LoginActivity.class);
+                                                   startActivity(intent);
+                                               }
+                                           }
+        );
+
+        // Lorsque l'utilisateur clique sur le texte « Deuxième Compte », il est ramené vers la page « Connexion »
+        tvDeuxiemeCompte = (TextView) findViewById(R.id.tvDeuxiemeCompte);
+        tvDeuxiemeCompte.setOnClickListener(new View.OnClickListener() {
+                                               @Override
+                                               public void onClick(View v) {
+                                                   Intent intent = new Intent(AjouterCompte.this, LoginActivity.class);
+                                                   startActivity(intent);
+                                               }
+                                           }
+        );
+
+        // Lorsque l'utilisateur clique sur l'icône  du troisième compte, il est ramené vers la page « Connexion »
+        ivTroisiemeCompte = (ImageView) findViewById(R.id.ivTroisiemeCompte);
+        ivTroisiemeCompte.setOnClickListener(new View.OnClickListener() {
+                                               @Override
+                                               public void onClick(View v) {
+                                                   Intent intent = new Intent(AjouterCompte.this, LoginActivity.class);
+                                                   startActivity(intent);
+                                               }
+                                           }
+        );
+
+        // Lorsque l'utilisateur clique sur le texte « Troisième Compte », il est ramené vers la page « Connexion »
+        tvTroisiemeCompte = (TextView) findViewById(R.id.tvTroisiemeCompte);
+        tvTroisiemeCompte.setOnClickListener(new View.OnClickListener() {
+                                               @Override
+                                               public void onClick(View v) {
+                                                   Intent intent = new Intent(AjouterCompte.this, LoginActivity.class);
+                                                   startActivity(intent);
+                                               }
+                                           }
+        );
 
         // Lorsque l'utilisateur clique sur l'icône  pour ajouter un compte, il est ramené vers la page « Création de compte »
         ivAjouterCompte = (ImageView) findViewById(R.id.ivAjouterCompte);
