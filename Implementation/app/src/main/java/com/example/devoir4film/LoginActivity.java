@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Si l'authentification est vraie, on passe à la prochaine vue, le cas échéant on affiche un message d'erreur
                 if (auth()) {
-                    Intent nextActivity = new Intent(LoginActivity.this, SuggestionFilm.class);
+                    Intent nextActivity = new Intent(LoginActivity.this, choisirHumeur.class);
                     startActivity(nextActivity);
                 }
                 else {
@@ -139,7 +139,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             // Lier SuggestionFilm au span
             public void onClick(View view) {
-                Intent nextActivity = new Intent(LoginActivity.this, SuggestionFilm.class);
+                Intent nextActivity = new Intent(LoginActivity.this, choisirHumeur.class);
                 startActivity(nextActivity);
             }
 
