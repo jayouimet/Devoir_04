@@ -111,8 +111,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             // Lier NewAccountActivity au span
             public void onClick(View view) {
-                /*Intent nextActivity = new Intent(LoginActivity.this, NewAccountActivity.class);
-                startActivity(nextActivity);*/
+                Intent nextActivity = new Intent(LoginActivity.this, CreationCompte.class);
+                startActivity(nextActivity);
             }
 
             // Changement du style du span

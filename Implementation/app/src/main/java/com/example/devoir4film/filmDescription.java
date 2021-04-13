@@ -43,8 +43,8 @@ public class filmDescription extends AppCompatActivity {
         String titre = getIntent().getStringExtra("titre");
         titreFilm = findViewById(R.id.titrefilm);
         premiereEmotion = findViewById(R.id.premiereemotion);
-        deuxiemeEmotion=findViewById(R.id.deuxiemeemotion);
-        troisiemeEmotion=findViewById(R.id.troisiemeemotion);
+        deuxiemeEmotion = findViewById(R.id.deuxiemeemotion);
+        troisiemeEmotion = findViewById(R.id.troisiemeemotion);
         actuel = BD.findFilm(titre);//va chercher le film dans la BD
 
         description.setText(actuel.getDescription());
@@ -70,13 +70,14 @@ public class filmDescription extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             } else if (item.getItemId() == R.id.profilNavigation) {
-
+                Intent intent = new Intent(this, ParametresCompte.class);
+                startActivity(intent);
                 return true;
             }
 
             return false;
         });
-        if(actuel.isFavori()){
+        if (actuel.isFavori()) {
             imagestar.setImageResource(R.mipmap.yellowstar_foreground);
         }
         HashMap<String, Integer> mapEmotion = BD.getMapEmotion();
@@ -102,6 +103,7 @@ public class filmDescription extends AppCompatActivity {
 
 
     }
+
     //change l'image de favori
     public void clickImages(View v) {
         if (!(actuel.isFavori())) {
@@ -118,6 +120,7 @@ public class filmDescription extends AppCompatActivity {
 
     /**
      * si clique 1 etoile
+     *
      * @param v image de une etoile
      */
     public void click1Star(View v) {
@@ -142,6 +145,7 @@ public class filmDescription extends AppCompatActivity {
 
     /**
      * met 2 etoile jaune
+     *
      * @param v
      */
     public void click2Star(View v) {
@@ -164,6 +168,7 @@ public class filmDescription extends AppCompatActivity {
 
     /**
      * met 3 etoile jaune
+     *
      * @param v
      */
     public void click3Star(View v) {
@@ -186,6 +191,7 @@ public class filmDescription extends AppCompatActivity {
 
     /**
      * met 4 etoile jaune
+     *
      * @param v
      */
     public void click4Star(View v) {
@@ -205,6 +211,7 @@ public class filmDescription extends AppCompatActivity {
 
     /**
      * met 5 etoiles transparentes
+     *
      * @param v
      */
     public void click5Star(View v) {
@@ -219,7 +226,8 @@ public class filmDescription extends AppCompatActivity {
         }
 
     }
-    public void goBackDescription(View v){
+
+    public void goBackDescription(View v) {
         this.finish();
     }
 }

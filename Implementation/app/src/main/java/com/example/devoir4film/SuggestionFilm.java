@@ -33,15 +33,15 @@ public class SuggestionFilm extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suggestion);
-        actuel=BD.user;//utilisateur
+        actuel = BD.user;//utilisateur
         //trouve les elements visuels
         maListView = findViewById(R.id.listsuggestion);
         bottomNavigationMenu = findViewById(R.id.barnavsuggestion);
         inputRechercher = findViewById(R.id.barrerechercheselonhumeur);
-        favorie=findViewById(R.id.imageetoile);
+        favorie = findViewById(R.id.imageetoile);
         tabfilm = BD.tabfilm;
         //remplit la liste view
-        updateListView("",true);
+        updateListView("", true);
         inputRechercher.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -51,7 +51,7 @@ public class SuggestionFilm extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 //lorsque le texte change, la vue s'update
-                updateListView("" + s,false);
+                updateListView("" + s, false);
             }
 
             @Override
@@ -65,16 +65,16 @@ public class SuggestionFilm extends AppCompatActivity {
 
                 return true;
             } else if (item.getItemId() == R.id.favoriNavigation) {
-                Intent intent=new Intent(this,favoris.class);
+                Intent intent = new Intent(this, favoris.class);
                 startActivity(intent);
 
                 return true;
             } else if (item.getItemId() == R.id.humeurNavigation) {
-                Intent intent=new Intent(this,choisirHumeur.class);
+                Intent intent = new Intent(this, choisirHumeur.class);
                 startActivity(intent);
                 return true;
             } else if (item.getItemId() == R.id.profilNavigation) {
-                Intent intent=new Intent(this,ParametresCompte.class);
+                Intent intent = new Intent(this, ParametresCompte.class);
                 startActivity(intent);
                 return true;
             }
@@ -86,10 +86,11 @@ public class SuggestionFilm extends AppCompatActivity {
 
     /**
      * update la list view
+     *
      * @param stringDepart comment ca doit commencer pour afficher
-     * @param firstlook si est la premiere fois affiche ou upate a cause text change
+     * @param firstlook    si est la premiere fois affiche ou upate a cause text change
      */
-    public void updateListView(String stringDepart,boolean firstlook) {
+    public void updateListView(String stringDepart, boolean firstlook) {
         ArrayList<HashMap<String, String>> listItem = new ArrayList<HashMap<String, String>>();
         //cette partie du code est base sur https://a-renouard.developpez.com/tutoriels/android/personnaliser-listview/
         //On déclare la HashMap qui contiendra les informations pour un item
@@ -101,39 +102,36 @@ public class SuggestionFilm extends AppCompatActivity {
         ) {
             for (int i = 0; i < temp.getHumeurlist().size(); i++) {
 
-                if (longueur <= temp.getHumeurlist().get(i).length() && stringDepart.equalsIgnoreCase(temp.getHumeurlist().get(i).substring(0, longueur))&&!firstlook) {
+                if (longueur <= temp.getHumeurlist().get(i).length() && stringDepart.equalsIgnoreCase(temp.getHumeurlist().get(i).substring(0, longueur)) && !firstlook) {
                     map = new HashMap<>();
-                    map.put("titre", temp.getTitre() );
-                    map.put("note",temp.getNote() + "/5");
-
+                    map.put("titre", temp.getTitre());
+                    map.put("note", temp.getNote() + "/5");
 
 
                     //on insere les divers info
                     map.put("duree", temp.getDuree());
-                    if(temp.isFavori()){
-                        map.put("img",String.valueOf(R.mipmap.yellowstar_foreground));
-                    }
-                    else{
-                        map.put("img",String.valueOf(R.mipmap.transpartentstar_foreground));
+                    if (temp.isFavori()) {
+                        map.put("img", String.valueOf(R.mipmap.yellowstar_foreground));
+                    } else {
+                        map.put("img", String.valueOf(R.mipmap.transpartentstar_foreground));
                     }
                     listItem.add(map);
                     break;
 
                 }
                 //si cest la premiere fois affiche tout film qui a bonne humeur
-                else if(firstlook&&actuel.getHumeur().equalsIgnoreCase(temp.getHumeurlist().get(i))){
+                else if (firstlook && actuel.getHumeur().equalsIgnoreCase(temp.getHumeurlist().get(i))) {
                     map = new HashMap<>();
-                    map.put("titre", temp.getTitre() );
-                    Log.d("tagertitre",temp.getTitre());
-                    map.put("note",temp.getNote() + "/5");
+                    map.put("titre", temp.getTitre());
+                    Log.d("tagertitre", temp.getTitre());
+                    map.put("note", temp.getNote() + "/5");
 
                     //on insire diverse informations
                     map.put("duree", temp.getDuree());
-                    if(temp.isFavori()){
-                        map.put("img",String.valueOf(R.mipmap.yellowstar_foreground));
-                    }
-                    else{
-                        map.put("img",String.valueOf(R.mipmap.transpartentstar_foreground));
+                    if (temp.isFavori()) {
+                        map.put("img", String.valueOf(R.mipmap.yellowstar_foreground));
+                    } else {
+                        map.put("img", String.valueOf(R.mipmap.transpartentstar_foreground));
                     }
                     listItem.add(map);
                     break;
@@ -144,7 +142,7 @@ public class SuggestionFilm extends AppCompatActivity {
 
         //Création d'un SimpleAdapter qui se chargera de mettre les items présents dans notre list (listItem) dans la vue row(chaque film)
         SimpleAdapter mSchedule = new SimpleAdapter(this.getBaseContext(), listItem, R.layout.rangefilmsuggestion,
-                new String[]{"titre", "duree","img","note"}, new int[]{R.id.titrenote, R.id.dureetextbox,R.id.imageetoile,R.id.notefilm});
+                new String[]{"titre", "duree", "img", "note"}, new int[]{R.id.titrenote, R.id.dureetextbox, R.id.imageetoile, R.id.notefilm});
 
 
         //On attribue à notre listView l'adapter que l'on vient de créer
@@ -154,8 +152,8 @@ public class SuggestionFilm extends AppCompatActivity {
         maListView.setOnItemClickListener((a, v, position, id) -> {
             //on récupère la HashMap contenant les infos de notre item (titre)
             HashMap<String, String> map1 = (HashMap<String, String>) maListView.getItemAtPosition(position);
-            Intent intent=new Intent(this,filmDescription.class);
-            intent.putExtra("titre",map1.get("titre"));
+            Intent intent = new Intent(this, filmDescription.class);
+            intent.putExtra("titre", map1.get("titre"));
 
             startActivity(intent);
 
