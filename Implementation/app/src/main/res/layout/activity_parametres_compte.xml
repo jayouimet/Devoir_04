@@ -217,11 +217,20 @@
                 tools:layout_editor_absoluteX="65dp" />
 
             <Button
+                android:id="@+id/deconnexion"
                 android:onClick="deconnexion"
                 android:layout_gravity="center"
                 android:layout_width="300dp"
                 android:layout_height="match_parent"
                 android:text="@string/deconnexion"
+                android:textAlignment="center"
+                ></Button>
+            <Button
+                android:onClick="changecompte"
+                android:layout_gravity="center"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:text="@string/changer"
                 android:textAlignment="center"
                 ></Button>
 

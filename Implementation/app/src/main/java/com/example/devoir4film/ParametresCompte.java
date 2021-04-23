@@ -23,4 +23,8 @@ public class ParametresCompte extends AppCompatActivity {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
+    public void changecompte(View v){
+        Intent intent = new Intent(this, AjouterCompte.class);
+        startActivity(intent);
+    }
 }

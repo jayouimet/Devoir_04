@@ -36,4 +36,5 @@
     <string name="change_password_change_button_label">Changer le mot de passe</string>
     <string name="change_password_error_message_label">Le mot de passe et sa confirmation doivent correspondre</string>
     <string name="deconnexion">Déconnexion</string>
+    <string name="changer">Changer de compte</string>
 </resources>
