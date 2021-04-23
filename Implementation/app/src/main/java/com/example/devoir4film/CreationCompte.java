@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class CreationCompte extends AppCompatActivity {
-    Button btCreerCompte;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,5 +23,8 @@ public class CreationCompte extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    public void retourConnexionCreation(View v){
+        this.finish();
     }
 }

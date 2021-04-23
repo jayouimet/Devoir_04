@@ -8,183 +8,202 @@
 
     <TextView
         android:id="@+id/tvCreationCompte"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
+        android:layout_width="293dp"
+        android:layout_height="56dp"
         android:text="Création de compte"
         android:textColor="#CB272323"
-        android:textSize="40dp"
+        android:textSize="33dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.764"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/btCreerCompte">
-
-
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="366dp"
+        android:layout_height="545dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/btCreerCompte"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCreationCompte">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal" />
-
-        <TextView
-            android:id="@+id/tvInfoPerso"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Informations personnelles"
-            android:textSize="20dp"
-            android:textStyle="bold"></TextView>
-
-        <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:ems="10"
-            android:hint="Nom Complet"
-            android:inputType="textPersonName" />
+            android:layout_marginTop="17dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/btCreerCompte"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCreationCompte">
 
 
-        <EditText
-            android:id="@+id/editTextPhone"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:ems="10"
-            android:hint="Numéro de téléphone"
-            android:inputType="phone" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" />
 
-        <EditText
-            android:id="@+id/editTextTextEmailAddress"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:ems="10"
-            android:hint="Email"
-            android:inputType="textEmailAddress" />
+            <TextView
+                android:id="@+id/tvInfoPerso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Informations personnelles"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
-        <EditText
-            android:id="@+id/editTextTextPassword"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:ems="10"
-            android:hint="Mot de passe"
-            android:inputType="textPassword" />
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:ems="10"
+                android:hint="Nom Complet"
+                android:inputType="textPersonName" />
 
 
-        <EditText
-            android:id="@+id/editTextTextPasswordConfirmer"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:ems="10"
-            android:hint="Confirmer le mot de passe"
-            android:inputType="textPassword" />
+            <EditText
+                android:id="@+id/editTextPhone"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:ems="10"
+                android:hint="Numéro de téléphone"
+                android:inputType="phone" />
 
-        <EditText
-            android:id="@+id/editTextDate"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:ems="10"
-            android:hint="date de naissance AAAA-MM-JJ"
-            android:inputType="date" />
+            <EditText
+                android:id="@+id/editTextTextEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textEmailAddress" />
 
-        <TextView
+            <EditText
+                android:id="@+id/editTextTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:ems="10"
+                android:hint="Mot de passe"
+                android:inputType="textPassword" />
 
-            android:id="@+id/tvAutre"
-            android:layout_width="77dp"
-            android:layout_height="7dp"
-            android:text=""
-            android:textColor="#C6201E1E"
-            android:textSize="16sp"></TextView>
-        <LinearLayout
-            android:layout_width="356dp"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextTextPasswordConfirmer"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:ems="10"
+                android:hint="Confirmer le mot de passe"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/editTextDate"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:ems="10"
+                android:hint="date de naissance AAAA-MM-JJ"
+                android:inputType="date" />
 
             <TextView
 
-                android:id="@+id/tvLangueCreationCompte"
-                android:layout_width="82dp"
-                android:layout_height="33dp"
-                android:text="Langue"
+                android:id="@+id/tvAutre"
+                android:layout_width="77dp"
+                android:layout_height="7dp"
+                android:text=""
                 android:textColor="#C6201E1E"
                 android:textSize="16sp"></TextView>
 
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="19dp"
-                app:srcCompat="@drawable/right_arrow"></ImageView>
+            <LinearLayout
+                android:layout_width="356dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:id="@+id/tvLangueCreationCompte"
+                    android:layout_width="82dp"
+                    android:layout_height="33dp"
+                    android:text="Langue"
+                    android:textColor="#C6201E1E"
+                    android:textSize="16sp"></TextView>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="19dp"
+                    app:srcCompat="@drawable/right_arrow"></ImageView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="356dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" />
+
+            <TextView
+                android:id="@+id/tvMedias"
+                android:layout_width="371dp"
+                android:layout_height="wrap_content"
+                android:text="Médias"
+                android:textSize="24sp"
+                android:textStyle="bold"></TextView>
+
+            <RadioButton
+                android:id="@+id/radioButtonCinema"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="Cinéma"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="65dp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonNetflix"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="Netflix"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="65dp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonPrimeVideo"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="Prime Video"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="65dp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonCrave"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="Crave"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="65dp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonSuperEcran"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="Super Écran"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="65dp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonConditionsUtilisation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="J'ai lu et pris conscience des conditions d'utilisation"
+                android:textColor="#C6191717"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="65dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="30dp"></TextView>
+
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="356dp"
-            android:layout_height="match_parent"
-            android:orientation="horizontal" />
-
-        <TextView
-            android:id="@+id/tvMedias"
-            android:layout_width="371dp"
-            android:layout_height="wrap_content"
-            android:text="Médias"
-            android:textSize="24sp"
-            android:textStyle="bold"></TextView>
-
-        <RadioButton
-            android:id="@+id/radioButtonCinema"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="Cinéma"
-            android:textSize="20sp"
-            tools:layout_editor_absoluteX="65dp" />
-
-        <RadioButton
-            android:id="@+id/radioButtonNetflix"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="Netflix"
-            android:textSize="20sp"
-            tools:layout_editor_absoluteX="65dp" />
-
-        <RadioButton
-            android:id="@+id/radioButtonPrimeVideo"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="Prime Video"
-            android:textSize="20sp"
-            tools:layout_editor_absoluteX="65dp" />
-
-        <RadioButton
-            android:id="@+id/radioButtonCrave"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="Crave"
-            android:textSize="20sp"
-            tools:layout_editor_absoluteX="65dp" />
-
-        <RadioButton
-            android:id="@+id/radioButtonSuperEcran"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="Super Écran"
-            android:textSize="20sp"
-            tools:layout_editor_absoluteX="65dp" />
-
-        <RadioButton
-            android:id="@+id/radioButtonConditionsUtilisation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="J'ai lu et pris conscience des conditions d'utilisation"
-            android:textColor="#C6191717"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="65dp" />
-
-
-    </LinearLayout>
-
+    </ScrollView>
     <Button
         android:id="@+id/btCreerCompte"
         android:layout_width="wrap_content"
@@ -198,6 +217,20 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollviewfilm" />
+
+    <ImageView
+        android:id="@+id/goback"
+        android:layout_width="50dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="9dp"
+        android:onClick="retourConnexionCreation"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toStartOf="@+id/tvCreationCompte"
+        app:layout_constraintHorizontal_bias="0.565"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

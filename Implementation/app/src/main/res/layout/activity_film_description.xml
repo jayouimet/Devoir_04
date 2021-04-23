@@ -228,7 +228,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingBottom="30dp">
 
                 <ImageView
                     android:id="@+id/premiereemotion"
@@ -276,12 +277,12 @@
         app:menu="@menu/navigation" />
 
     <ImageView
-        android:onClick="goBackDescription"
         android:id="@+id/retourDescription"
         android:layout_width="37dp"
         android:layout_height="51dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="52dp"
+        android:onClick="goBackDescription"
         app:layout_constraintEnd_toStartOf="@+id/titrefilm"
         app:layout_constraintHorizontal_bias="0.577"
         app:layout_constraintStart_toStartOf="parent"

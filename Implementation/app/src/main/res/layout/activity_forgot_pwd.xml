@@ -84,4 +84,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/forgotEmailLabel"
         tools:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/retourconnexion"
+        android:layout_width="63dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/forgotPasswordTitleLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.056"
+        app:srcCompat="@drawable/arrow"
+        android:onClick="retourConnexion"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

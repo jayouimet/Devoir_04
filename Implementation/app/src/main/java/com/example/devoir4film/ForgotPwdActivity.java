@@ -98,4 +98,7 @@ public class ForgotPwdActivity extends AppCompatActivity {
         this.forgotPasswordMessageSentLabel.setText(spannableString);
         this.forgotPasswordMessageSentLabel.setMovementMethod(LinkMovementMethod.getInstance());
     }
+    public void retourConnexion(View v){
+        this.finish();
+    }
 }
