@@ -9,7 +9,6 @@ public class BD {
    public static String[] listHumeur={"Fâché","Neutre","Fatigué","Drôle","Party","Heureux","Amoureux","Triste","Horreur","Dépressif","Étrange","Curieux"};
    public static ArrayList<Film> tabfilm=createTabFilm();
 
-
    /**
     * met des films
     * @return le tableau de film

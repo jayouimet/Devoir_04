@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 
 public class ChangePasswordActivity extends AppCompatActivity {
     // Variables de référence à l'UI
+    private ImageButton changePasswordReturnButton;
     private TextInputEditText changePasswordTextBox;
     private TextInputEditText confirmChangePasswordTextBox;
     private Button changePasswordButton;
@@ -27,6 +29,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
         this.changePasswordButton = findViewById(R.id.changePasswordButton);
         this.changePasswordErrorLabel = findViewById(R.id.changePasswordErrorLabel);
         this.changePasswordErrorLabel.setVisibility(View.GONE);
+        this.changePasswordReturnButton = findViewById(R.id.changePasswordReturnButton);
         // Création de la logique du button
         this.changePasswordButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,5 +43,19 @@ public class ChangePasswordActivity extends AppCompatActivity {
                 }
             }
         });
+
+        this.changePasswordReturnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeActivity();
+            }
+        });
+    }
+
+    /**
+     * Fermeture de l'activité ChangePassword
+     */
+    private void closeActivity() {
+        this.finish();
     }
 }

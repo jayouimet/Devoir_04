@@ -7,43 +7,51 @@
     tools:context=".SuggestionFilm">
 
     <TextView
-        android:id="@+id/suggestion"
-        android:layout_width="wrap_content"
+        android:id="@+id/suggestionTitleLabel"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:text="@string/suggestion"
-        android:textSize="50dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/suggestion_activity_title_label"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/barrerechercheselonhumeur"
-        android:layout_width="322dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="20dp"
-        android:drawableRight="@drawable/searchicon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:drawableEnd="@drawable/searchicon"
         android:ems="10"
+        android:hint="@string/suggestion_activity_search_hint"
         android:inputType="textPersonName"
-        android:text="@string/recherchehumeur"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.413"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/suggestion" />
+        app:layout_constraintTop_toBottomOf="@+id/suggestionTitleLabel" />
 
     <ListView
         android:id="@+id/listsuggestion"
-        android:layout_width="339dp"
-        android:layout_height="421dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/barnavsuggestion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/barrerechercheselonhumeur" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/barnavsuggestion"
-        android:layout_width="411dp"
-        android:layout_height="82dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:itemBackground="@color/white"
         app:itemIconTint="@color/black"
         app:itemTextColor="@color/black"

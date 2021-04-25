@@ -14,10 +14,12 @@ import android.text.style.UnderlineSpan;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class ForgotPwdActivity extends AppCompatActivity {
 
+    private ImageButton forgotPasswordReturnButton;
     private TextView forgotPasswordMessageSentLabel;
     private TextView forgotEmailLabel;
     private Button forgotPasswordReinitialiseButton;
@@ -30,6 +32,7 @@ public class ForgotPwdActivity extends AppCompatActivity {
         this.forgotPasswordReinitialiseButton = findViewById(R.id.forgotPasswordReinitialiseButton);
         this.forgotEmailLabel = findViewById(R.id.forgotEmailLabel);
         this.forgotPasswordMessageSentLabel = findViewById(R.id.forgotPasswordMessageSentLabel);
+        this.forgotPasswordReturnButton = findViewById(R.id.forgotPasswordReturnButton);
         // On lie le texte forgot email à son activité
         this.setForgotEmailClickable();
         this.setReinitialiseLinkClickable();
@@ -43,6 +46,20 @@ public class ForgotPwdActivity extends AppCompatActivity {
                 forgotPasswordMessageSentLabel.setVisibility(View.VISIBLE);
             }
         });
+
+        this.forgotPasswordReturnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeActivity();
+            }
+        });
+    }
+
+    /**
+     * Fermeture de l'activité ForgotPassword
+     */
+    private void closeActivity() {
+        this.finish();
     }
 
     /**
@@ -97,8 +114,5 @@ public class ForgotPwdActivity extends AppCompatActivity {
         spannableString.setSpan(new UnderlineSpan(), 100, 103, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         this.forgotPasswordMessageSentLabel.setText(spannableString);
         this.forgotPasswordMessageSentLabel.setMovementMethod(LinkMovementMethod.getInstance());
-    }
-    public void retourConnexion(View v){
-        this.finish();
     }
 }

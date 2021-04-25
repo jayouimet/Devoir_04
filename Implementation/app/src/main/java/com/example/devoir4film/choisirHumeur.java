@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ import java.util.HashMap;
 public class choisirHumeur extends AppCompatActivity {
     GridView gridView;
     EditText editText;
+    ImageButton chooseMoodReturnButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +26,8 @@ public class choisirHumeur extends AppCompatActivity {
         setContentView(R.layout.activity_choisir_humeur);
         //va chercher les elements visuels
         gridView = findViewById(R.id.gridhumeur);
-        editText = findViewById(R.id.searchhumeur);
+        editText = findViewById(R.id.searchMoodTextView);
+        chooseMoodReturnButton = findViewById(R.id.chooseMoodReturnButton);
         updateListView("");//met les elements dans la grid
         editText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -41,6 +44,13 @@ public class choisirHumeur extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
+            }
+        });
+
+        chooseMoodReturnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goBackHumeur();
             }
         });
     }
@@ -95,7 +105,7 @@ public class choisirHumeur extends AppCompatActivity {
 
         });
     }
-    public void goBackHumeur(View v){
+    public void goBackHumeur(){
         this.finish();
     }
 }
