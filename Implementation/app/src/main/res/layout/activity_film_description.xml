@@ -21,14 +21,15 @@
 
     <ScrollView
         android:id="@+id/scrollviewfilm"
-        android:layout_width="384dp"
-        android:layout_height="516dp"
+        android:layout_width="372dp"
+        android:layout_height="675dp"
         android:layout_marginBottom="68dp"
         android:translationY="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.578"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titrefilm">
 
         <LinearLayout
             android:layout_width="match_parent"
