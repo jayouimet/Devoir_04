@@ -126,10 +126,13 @@
                 android:id="@+id/parametersDatePicker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:editable="false"
                 android:ems="10"
                 android:hint="Date de naissance"
                 android:inputType="none"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:text="24-06-1965" />
 
 

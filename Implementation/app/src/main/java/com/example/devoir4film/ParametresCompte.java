@@ -74,7 +74,14 @@ public class ParametresCompte extends AppCompatActivity {
         dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                parametersDatePicker.setText(day + "-" + (((month + 1) < 10) ? "0" : "") + (month + 1) + "-" + year);
+                parametersDatePicker.setText(
+                                (((day + 1) < 10) ? "0" : "") +
+                                day +
+                                "-" +
+                                (((month + 1) < 10) ? "0" : "") +
+                                (month + 1) +
+                                "-" +
+                                year);
             }
         };
 
