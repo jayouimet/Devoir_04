@@ -8,6 +8,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -18,10 +19,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class favoris extends AppCompatActivity {
-    BottomNavigationView bottomNavigationMenu;
-    ArrayList<Film> tabfilm;
-    ListView maListView;
-    EditText inputRechercher;
+    private BottomNavigationView bottomNavigationMenu;
+    private ArrayList<Film> tabfilm;
+    private ListView maListView;
+    private EditText inputRechercher;
+    private ImageButton favoritesReturnButton;
     
 
     @Override
@@ -32,6 +34,7 @@ public class favoris extends AppCompatActivity {
         maListView = findViewById(R.id.listfavori);
         bottomNavigationMenu = findViewById(R.id.barnavfav);
         inputRechercher = findViewById(R.id.barrerechercheselonhumeurfavoris);
+        favoritesReturnButton = findViewById(R.id.favoritesReturnButton);
 
         bottomNavigationMenu.setSelectedItemId(R.id.favoriNavigation);
 
@@ -80,6 +83,12 @@ public class favoris extends AppCompatActivity {
             return false;
         });
 
+        favoritesReturnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeActivity();
+            }
+        });
     }
 
     public void updateListView(String stringDepart) {
@@ -134,9 +143,11 @@ public class favoris extends AppCompatActivity {
 
         });
     }
-    public void goBackFavoris(View v){
+
+    /**
+     * Fermeture de l'activité Favoris
+     */
+    private void closeActivity() {
         this.finish();
     }
-
-
 }

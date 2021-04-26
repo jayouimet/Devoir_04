@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,12 +20,20 @@ public class AjouterCompte extends AppCompatActivity {
     ImageView ivAjouterCompte;
     TextView tvAjouterCompte;
 
+    private ImageButton changeAccountReturnButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajouter_compte);
 
-
+        this.changeAccountReturnButton = findViewById(R.id.changeAccountReturnButton);
+        this.changeAccountReturnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeActivity();
+            }
+        });
 
         // Lorsque l'utilisateur clique sur l'icône  du premier compte, il est ramené vers la page « Connexion »
         ivPremierCompte = (ImageView) findViewById(R.id.ivPremierCompte);
@@ -114,5 +123,9 @@ public class AjouterCompte extends AppCompatActivity {
                                                  }
                                              }
         );
+    }
+
+    public void closeActivity(){
+        this.finish();
     }
 }

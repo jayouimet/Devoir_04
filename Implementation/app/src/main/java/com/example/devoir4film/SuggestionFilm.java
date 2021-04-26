@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationMenu;
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
@@ -22,12 +23,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SuggestionFilm extends AppCompatActivity {
-    BottomNavigationView bottomNavigationMenu;
-    ArrayList<Film> tabfilm;
-    ListView maListView;
-    EditText inputRechercher;
-    ImageView favorie;
-    Utilisateur actuel;
+    private BottomNavigationView bottomNavigationMenu;
+    private ArrayList<Film> tabfilm;
+    private ListView maListView;
+    private EditText inputRechercher;
+    private ImageView favorie;
+    private Utilisateur actuel;
+    private TextView suggestionTitleLabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,8 @@ public class SuggestionFilm extends AppCompatActivity {
         inputRechercher = findViewById(R.id.barrerechercheselonhumeur);
         favorie = findViewById(R.id.imageetoile);
         tabfilm = BD.tabfilm;
+        suggestionTitleLabel = findViewById(R.id.suggestionTitleLabel);
+        suggestionTitleLabel.setText(String.format(getResources().getString(R.string.suggestion_activity_title_label), actuel.getHumeur()));
         //remplit la liste view
         updateListView("", true);
         inputRechercher.addTextChangedListener(new TextWatcher() {
@@ -151,6 +155,7 @@ public class SuggestionFilm extends AppCompatActivity {
         //Enfin on met un écouteur d'évènement sur notre listView
         maListView.setOnItemClickListener((a, v, position, id) -> {
             //on récupère la HashMap contenant les infos de notre item (titre)
+
             HashMap<String, String> map1 = (HashMap<String, String>) maListView.getItemAtPosition(position);
             Intent intent = new Intent(this, filmDescription.class);
             intent.putExtra("titre", map1.get("titre"));

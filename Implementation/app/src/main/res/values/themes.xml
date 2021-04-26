@@ -13,4 +13,10 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="DatePickerTheme" parent="@android:style/Theme.Holo.Light.Dialog.MinWidth">
+        <item name="colorAccent">@color/main_blue</item>
+        <item name="android:headerBackground">@color/main_blue</item>
+        <item name="android:textColor">@color/main_blue</item>
+        <item name="android:textColorHighlight">@color/main_blue_highlight</item>
+    </style>
 </resources>

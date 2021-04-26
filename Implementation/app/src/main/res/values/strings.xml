@@ -1,12 +1,15 @@
 <resources>
-    <string name="app_name">Devoir4Film</string>
+    <string name="app_name">Filmotion</string>
+    <string name="app_logo_content_description">Logo_filmotion</string>
     <string name="suggestion">SUGGESTIONS</string>
     <string name="pageacceuil">Page d\'accueil</string>
     <string name="recherchehumeur">Rechercher par humeur</string>
     <string name="humeur">Vos humeurs</string>
     <string name="profil">Votre profil</string>
     <string name="favorinav">Vos favoris</string>
-    <string name="sentez">Commment vous sentez-vous ajourd\'hui?</string>
+    <string name="choose_mood_title_label">Sélection de l\'humeur</string>
+    <string name="choose_mood_search_hint">Comment vous sentez-vous?</string>
+    <string name="sentez">Comment vous sentez-vous ajourd\'hui?</string>
     <string name="recherche">Recherche</string>
     <string name="directeur">Directeur:</string>
     <string name="realisateur">Réalisateur:</string>
@@ -17,6 +20,12 @@
     <string name="dejavisionner">Déjà visionné:</string>
     <string name="humeurcorrespondante">Humeurs correspondantes:</string>
 
+    <string name="suggestion_activity_title_label">Suggestions de films pour l\'humeur : "%s"</string>
+    <string name="suggestion_activity_search_hint">Rechercher par titre</string>
+    <string name="favorites_activity_search_hint">Rechercher par titre</string>
+    <string name="favorites_activity_title_label">Favoris</string>
+    <string name="parameters_activity_title_label">Paramètres utilisateur</string>
+
     <string name="wrong_email_password_combinaison_label">La combinaison courriel/mot de passe entrée est erronée.</string>
     <string name="email_hint">Courriel</string>
     <string name="password_hint">Mot de passe</string>
@@ -25,16 +34,31 @@
     <string name="create_new_account_label">Créer un nouveau compte</string>
     <string name="login_as_guest_label">Se connecter en tant qu\'invité</string>
 
-    <string name="forgot_password_title_label">Entrez votre courriel pour réinitialiser votre mot de passe</string>
+    <string name="forgot_password_title_label">Mot de passe oublié</string>
+    <string name="forgot_password_instruction_label">Entrez votre courriel pour réinitialiser votre mot de passe</string>
     <string name="forgot_password_reinitialise_label">Réinitialiser</string>
     <string name="forgot_password_message_sent_label">Un lien de réinitialisation vous a été envoyé par courriel. (Fonctionnalité non implémentée cliquez ici pour le test)</string>
     <string name="forgot_email_label">Adresse courriel oubliée?</string>
 
     <string name="change_password_title_label">Changement du mot de passe</string>
+    <string name="change_password_instruction_label">Veuillez sélectionner un nouveau mot de passe</string>
     <string name="change_password_new_password_hint">Nouveau mot de passe</string>
     <string name="change_password_confirm_password_hint">Confirmer le mot de passe</string>
     <string name="change_password_change_button_label">Changer le mot de passe</string>
     <string name="change_password_error_message_label">Le mot de passe et sa confirmation doivent correspondre</string>
     <string name="deconnexion">Déconnexion</string>
     <string name="changer">Changer de compte</string>
+
+    <string name="parameters_new_password_hint">Nouveau mot de passe</string>
+    <string name="parameters_confirm_new_password_hint">Confirmer le mot de passe</string>
+
+    <string name="parameters_language_list_label">Langage</string>
+    <string-array name="parameters_language_list">
+        <item>Allemand</item>
+        <item>Anglais</item>
+        <item>Espagnol</item>
+        <item>Français</item>
+        <item>Italien</item>
+        <item>Russe</item>
+    </string-array>
 </resources>

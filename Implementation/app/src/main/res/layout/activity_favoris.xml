@@ -6,26 +6,41 @@
     android:layout_height="match_parent"
     tools:context=".favoris">
 
-    <TextView
-        android:id="@+id/vosfav"
+    <ImageButton
+        android:id="@+id/favoritesReturnButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="@string/favorinav"
-        android:textSize="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="24dp"
+        android:background="?attr/actionModeCloseDrawable"
+        app:layout_constraintBottom_toBottomOf="@+id/vosfav"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/vosfav"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/vosfav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/favorites_activity_title_label"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/favoritesReturnButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/barrerechercheselonhumeurfavoris"
-        android:layout_width="322dp"
-        android:layout_height="68dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="20dp"
-        android:drawableRight="@drawable/searchicon"
+        android:layout_marginEnd="24dp"
+        android:drawableEnd="@drawable/searchicon"
         android:ems="10"
+        android:hint="@string/favorites_activity_search_hint"
         android:inputType="textPersonName"
-        android:text="@string/recherchehumeur"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.413"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,17 +48,21 @@
 
     <ListView
         android:id="@+id/listfavori"
-        android:layout_width="341dp"
-        android:layout_height="418dp"
-        android:layout_marginTop="18dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/barnavfav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/barrerechercheselonhumeurfavoris" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/barnavfav"
-        android:layout_width="411dp"
-        android:layout_height="82dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:itemBackground="@color/white"
         app:itemIconTint="@color/black"
         app:itemTextColor="@color/black"
@@ -51,18 +70,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/navigation" />
-
-    <ImageView
-        android:onClick="goBackFavoris"
-        android:id="@+id/retourFavori"
-        android:layout_width="55dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="11dp"
-        app:layout_constraintEnd_toStartOf="@+id/vosfav"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/arrow" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
