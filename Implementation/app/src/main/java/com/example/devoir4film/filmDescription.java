@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,6 +27,7 @@ public class filmDescription extends AppCompatActivity {
     ImageView deuxiemeEmotion;
     ImageView troisiemeEmotion;
     BottomNavigationView bottomNavigationView;
+    private ImageButton descriptionFilmReturnButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class filmDescription extends AppCompatActivity {
         annnes = findViewById(R.id.annees);
         imagestar = findViewById(R.id.imagestardescription);
         bottomNavigationView = findViewById(R.id.barnavigationdescription);
+        descriptionFilmReturnButton = findViewById(R.id.descriptionFilmReturnButton);
         //va chercher le titre du film
         String titre = getIntent().getStringExtra("titre");
         titreFilm = findViewById(R.id.titrefilm);
@@ -54,6 +57,14 @@ public class filmDescription extends AppCompatActivity {
         genre.setText(actuel.getGenres());
         producteur.setText(actuel.getProducteur());
         realisateur.setText(actuel.getRealistaeur());
+
+        descriptionFilmReturnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goBackDescription();
+            }
+        });
+
         //bar de navigation
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             if (item.getItemId() == R.id.homeNavigation) {
@@ -227,7 +238,7 @@ public class filmDescription extends AppCompatActivity {
 
     }
 
-    public void goBackDescription(View v) {
+    public void goBackDescription() {
         this.finish();
     }
 }

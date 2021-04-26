@@ -7,25 +7,39 @@
     android:layout_height="match_parent"
     tools:context=".filmDescription">
 
+    <ImageButton
+        android:id="@+id/descriptionFilmReturnButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:background="?attr/actionModeCloseDrawable"
+        app:layout_constraintBottom_toBottomOf="@+id/titrefilm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/titrefilm"
+        tools:ignore="ContentDescription" />
+
     <TextView
         android:id="@+id/titrefilm"
-        android:layout_width="165dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
         android:text="TextView"
-        android:textSize="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/imagestardescription"
+        app:layout_constraintStart_toEndOf="@+id/descriptionFilmReturnButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:id="@+id/scrollviewfilm"
-        android:layout_width="372dp"
-        android:layout_height="675dp"
-        android:layout_marginBottom="68dp"
-        android:translationY="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/barnavigationdescription"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toStartOf="parent"
@@ -256,19 +270,19 @@
 
     <ImageView
         android:id="@+id/imagestardescription"
-        android:layout_width="94dp"
-        android:layout_height="87dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="24dp"
         android:onClick="clickImages"
+        app:layout_constraintBottom_toBottomOf="@+id/titrefilm"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.984"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/titrefilm"
         app:srcCompat="@mipmap/homeicone_foreground" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/barnavigationdescription"
-        android:layout_width="413dp"
-        android:layout_height="71dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:itemBackground="@color/white"
         app:itemIconTint="@color/black"
         app:itemTextColor="@color/black"
@@ -276,18 +290,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/navigation" />
-
-    <ImageView
-        android:id="@+id/retourDescription"
-        android:layout_width="37dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="52dp"
-        android:onClick="goBackDescription"
-        app:layout_constraintEnd_toStartOf="@+id/titrefilm"
-        app:layout_constraintHorizontal_bias="0.577"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/arrow" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
