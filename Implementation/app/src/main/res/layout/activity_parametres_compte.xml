@@ -164,11 +164,6 @@
                 tools:layout_editor_absoluteY="63dp" />
 
 
-            <ExpandableListView
-                android:id="@+id/languageExpandableListView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
             <LinearLayout
                 android:layout_width="356dp"
                 android:layout_height="match_parent"

@@ -21,40 +21,17 @@ import java.util.List;
 
 public class ParametresCompte extends AppCompatActivity {
 
-    private ExpandableListView languageExpandableListView;
-    private List<String> listGroup;
-    private HashMap<String, List<String>> listItem;
     private ImageButton parametersReturnButton;
     private EditText parametersDatePicker;
     private DatePickerDialog.OnDateSetListener dateSetListener;
-
-    private LanguageListAdapter languageListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parametres_compte);
 
-        languageExpandableListView = findViewById(R.id.languageExpandableListView);
         parametersDatePicker = findViewById(R.id.parametersDatePicker);
         parametersReturnButton = findViewById(R.id.parametersReturnButton);
-
-        listGroup = new ArrayList<>();
-        listItem = new HashMap<>();
-        languageListAdapter = new LanguageListAdapter(this, listGroup, listItem);
-
-        languageExpandableListView.setAdapter(languageListAdapter);
-
-        listGroup.add(getString(R.string.parameters_language_list_label));
-
-        List<String> tempList = new ArrayList<>();
-        String[] arr = getResources().getStringArray(R.array.parameters_language_list);
-        for (String s : arr) {
-            tempList.add(s);
-        }
-
-        listItem.put(listGroup.get(0), tempList);
-        languageListAdapter.notifyDataSetChanged();
 
         parametersDatePicker.setOnClickListener(new View.OnClickListener() {
             @Override

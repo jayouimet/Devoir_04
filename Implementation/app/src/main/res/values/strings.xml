@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">Devoir4Film</string>
+    <string name="app_name">Filmotion</string>
+    <string name="app_logo_content_description">Logo_filmotion</string>
     <string name="suggestion">SUGGESTIONS</string>
     <string name="pageacceuil">Page d\'accueil</string>
     <string name="recherchehumeur">Rechercher par humeur</string>
